@@ -1,0 +1,25 @@
+from turtle import Turtle, Screen
+a = Turtle()
+screen = Screen()
+def move_forwards():
+    a.forward(10)
+def move_backwards():
+    a.backward(10)
+def turn_left():
+    new_heading = a.heading() + 10
+    a.setheading(new_heading)
+def turn_right():
+    new_heading = a.heading() - 10
+    a.setheading(new_heading)
+def clear():
+    a.clear()
+    a.penup()
+    a.home()
+    a.pendown()
+screen.listen()
+screen.onkey(move_forwards, "Up")
+screen.onkey(move_backwards, "Down")
+screen.onkey(turn_left, "Left")
+screen.onkey(turn_right, "Right")
+screen.onkey(clear, "c")
+screen.exitonclick()
